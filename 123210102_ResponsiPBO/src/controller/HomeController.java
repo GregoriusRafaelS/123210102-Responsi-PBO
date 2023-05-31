@@ -30,7 +30,7 @@ public class HomeController {
         homeView.getBtnShow().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent arg0){
-//                clearMovieTabel();
+                clearMovieTabel();
                 setMovieToTable();
             }
         });
@@ -53,6 +53,13 @@ public class HomeController {
 
             }
         });
+        
+//        homeView.getBtnClear().addActionListener(new ActionListener(){
+//            @Override
+//            public void actionPerformed(ActionEvent arg0){
+//                homeView.getTxtJudul().getText() = " ";
+//            }
+//        });
         
         homeView.getTableMovie().addMouseListener(new MouseAdapter(){
             @Override
@@ -92,6 +99,9 @@ public class HomeController {
         }
     }
     
-    
+    public void clearMovieTabel(){
+        DefaultTableModel model = (DefaultTableModel)homeView.getTableMovie().getModel();
+        model.setRowCount(0);
+    }
     
 }
